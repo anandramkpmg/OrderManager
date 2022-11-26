@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OrderManager.Oms.Exceptions
+namespace TransactionExporter.Oms.Exceptions
 {
     public class MissingOmsTypeException : Exception
     {

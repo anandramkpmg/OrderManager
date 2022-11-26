@@ -1,18 +1,18 @@
-﻿using OrderManager.Models;
-using OrderManager.Interface;
-using System.Threading.Tasks;
-using OrderManager.Oms;
-using OrderManager.Oms.Exceptions;
+﻿using System.Threading.Tasks;
+using TransactionExporter.Interface;
+using TransactionExporter.Models;
+using TransactionExporter.Oms;
+using TransactionExporter.Oms.Exceptions;
 
 namespace OrderManager
 {
-    public class OrderManager
+    public class TransactionExporter
     {
         private readonly string _transactionsFilePath = @"\files\transactions.csv";
         private readonly string _securitiesFilePath = @"\files\securities.csv";
         private readonly string _portfoliosFilePath = @"\files\portfolios.csv";
         private readonly IFileReader _fileReader;
-        public OrderManager(IFileReader fileReader)
+        public TransactionExporter(IFileReader fileReader)
         {
             _fileReader = fileReader;
         }

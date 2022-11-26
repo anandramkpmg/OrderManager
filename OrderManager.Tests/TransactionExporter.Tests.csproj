@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrderManager\OrderManager.csproj" />
+    <ProjectReference Include="..\OrderManager\TransactionExporter.csproj" />
   </ItemGroup>
 
 </Project>

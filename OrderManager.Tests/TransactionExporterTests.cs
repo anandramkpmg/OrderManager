@@ -1,19 +1,20 @@
-using OrderManager.Interface;
-using OrderManager.Oms.Exceptions;
 using System.IO;
 using System.Linq;
+using TransactionExporter.Interface;
+using TransactionExporter.Oms.Exceptions;
+using TransactionExporter.Tests;
 using Xunit;
 
 namespace OrderManager.Tests
 {
-    public class OrderManageTests
+    public class TransactionExporterTests
     {
         private readonly IFileReader _fileReader;
-        private readonly OrderManager _orderManager;
-        public OrderManageTests()
+        private readonly TransactionExporter _orderManager;
+        public TransactionExporterTests()
         {
             _fileReader = new FileReader();
-            _orderManager = new OrderManager(_fileReader);
+            _orderManager = new TransactionExporter(_fileReader);
             CleanUp();
         }
 

@@ -1,6 +1,6 @@
 ﻿using CsvHelper.Configuration.Attributes;
 
-namespace OrderManager.Tests
+namespace TransactionExporter.Tests
 {
     public class Transaction
     {

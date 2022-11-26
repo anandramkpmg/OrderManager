@@ -1,7 +1,8 @@
-﻿using OrderManager.Interface;
-using OrderManager.Oms.Exceptions;
+﻿using OrderManager.Oms;
+using TransactionExporter.Interface;
+using TransactionExporter.Oms.Exceptions;
 
-namespace OrderManager.Oms
+namespace TransactionExporter.Oms
 {
     public class OmsTypeFactory
     {
@@ -16,7 +17,7 @@ namespace OrderManager.Oms
                 case "CCC":
                     return new CCCOms();
                 default:
-                     throw new MissingOmsTypeException($" Missing OMS Type { type } ");
+                    throw new MissingOmsTypeException($" Missing OMS Type { type } ");
             }
         }
     }

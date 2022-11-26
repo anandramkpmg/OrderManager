@@ -1,7 +1,7 @@
 ﻿using CsvHelper.Configuration.Attributes;
 using System.ComponentModel.DataAnnotations;
 
-namespace OrderManager.Models
+namespace TransactionExporter.Models
 {
     public class Transaction
     {

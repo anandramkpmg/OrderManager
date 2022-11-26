@@ -1,8 +1,8 @@
 ﻿using CsvHelper.Configuration.Attributes;
 
-namespace OrderManager.Models
+namespace TransactionExporter.Models
 {
-    public class Portfolio 
+    public class Portfolio
     {
         [Name("PortfolioId")]
         public int PortfolioId { get; set; }
