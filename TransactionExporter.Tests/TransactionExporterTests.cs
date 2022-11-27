@@ -10,20 +10,20 @@ namespace OrderManager.Tests
     public class TransactionExporterTests
     {
         private readonly IFileReader _fileReader;
-        private readonly TransactionExporter _orderManager;
+        private readonly TransactionExporter _TransactionExported;
         public TransactionExporterTests()
         {
             _fileReader = new FileReader();
-            _orderManager = new TransactionExporter(_fileReader);
+            _TransactionExported = new TransactionExporter(_fileReader);
             CleanUp();
         }
 
         [Theory]
         [InlineData("AAA")]
         [InlineData("aaa")]
-        public async void OrderManager_TypeAAA_ExportsAAAFile(string omsType)
+        public async void TransactionExporter_TypeAAA_ExportsAAAFile(string omsType)
         {
-            await _orderManager.ExportCsvFile(omsType);
+            await _TransactionExported.ExportCsvFile(omsType);
 
             var omsaaa = _fileReader.ReadFiles<TransactionA>(@"\files\results.aaa");
 
@@ -37,9 +37,9 @@ namespace OrderManager.Tests
         [Theory]
         [InlineData("BBB")]
         [InlineData("bbb")]
-        public async void OrderManager_TypeBBB_ExportsBBBFile(string omsType)
+        public async void TransactionExporter_TypeBBB_ExportsBBBFile(string omsType)
         {
-            await _orderManager.ExportCsvFile(omsType);
+            await _TransactionExported.ExportCsvFile(omsType);
 
             var omsbbb = _fileReader.ReadFiles<TransactionB>(@"\files\results.bbb");
 
@@ -53,9 +53,9 @@ namespace OrderManager.Tests
         [Theory]
         [InlineData("CCC")]
         [InlineData("ccc")]
-        public async void OrderManager_TypeBBB_ExportsCCCFile(string omsType)
+        public async void TransactionExporter_TypeCCC_ExportsCCCFile(string omsType)
         {
-            await _orderManager.ExportCsvFile(omsType);
+            await _TransactionExported.ExportCsvFile(omsType);
 
             var omsccc = _fileReader.ReadFiles<TransactionC>(@"\files\results.ccc");
 
@@ -69,9 +69,9 @@ namespace OrderManager.Tests
         [Theory]
         [InlineData("")]
         [InlineData("DDD")]
-        public async void OrderManager_InValidOmsType_ThrowsException(string omsType)
+        public async void TransactionExporter_InValidOmsType_ThrowsException(string omsType)
         {
-            await Assert.ThrowsAsync<MissingOmsTypeException>(() => _orderManager.ExportCsvFile(omsType));
+            await Assert.ThrowsAsync<MissingOmsTypeException>(() => _TransactionExported.ExportCsvFile(omsType));
         }
 
         private static void CleanUp()
